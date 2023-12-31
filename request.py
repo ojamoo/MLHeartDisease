@@ -5,15 +5,3 @@ r = requests.post(url,json={'age': 40, 'Sex':1, 'ChestPainType':1, 'RestingBP':1
 
 print(r.json())
 
-
-#Age = float(request.form["Age"])
-           #Sex = float(request.form["Sex"])
-           #ChestPainType = float(request.form["ChestPainType"])
-           #RestingBP = float(request.form["RestingBP"])
-           #Cholesterol = float(request.form["Cholesterol"])
-           #FastingBS = float(request.form["FastingBS"])
-           #RestingECG = float(request.form["RestingECG"])
-           #MaxHR = float(request.form["MaxHR"])
-           #ExerciseAngina = float(request.form["ExerciseAngina"])
-           #Oldpeak = float(request.form["Oldpeak"])
-           #ST_Slope = float(request.form["ST_Slope"])
