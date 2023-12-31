@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title>Heart Disease Prediction</title>
+    {% endblock %}
+  </head>
+  <body>
+    <img src="{{ url_for('static', filename='TU.jpeg') }}"
+    class="image"/>
+
+    <style>
+        .image {
+            width: 250px;
+        }
+    </style>
+
+  <body>
+    
+<div class="container main">
+  <div class="jumbotron" id="holder">
+     <br>
+       <center><b><h2 style="color:#FF0000";>{{ prediction_text}}</h2></b></center> 
+     <br>
+     <br>
+    <center><h1 class='main_heading'> Heart Disease Prediction</h1></center>
+    <center><p>[Disclaimer: While efforts have been made to ensure the accuracy of the predictions provided by this application, the predictions are based on statistical models and are not guaranteed to be reflective of your actual health status.]</p></center>
+    <br>
+    <div class="instructions">
+      <h2>Instructions: </h2>
+      <p>Please enter values for the following fields</p>
+    </div>
+
+    <form class="form-horizontal" action="{{ url_for('predict')}}"method="post">
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type= "text" name="Age" placeholder="Age" required="required" />
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="Sex" placeholder="Sex (0 for Female, 1 for Male)" required="required" />
+        </div>
+      </div>
+
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="ChestPainType" placeholder="ChestPainType (0 for ASY, 1 for ATA, 2 for NAP)" required="required" />
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="RestingBP" placeholder="RestingBP [mmHg]" required="required" />
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type= "text" name="Cholesterol" placeholder="Cholesterol [mm/dl]" required="required" />
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="FastingBS" placeholder="FastingBS (1 if FastingBS > 120 mg/dl, 0 if otherwise)" required="required" />
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="RestingECG" placeholder="RestingECG (0 for SVH, 1 for Normal, 2 for ST)" required="required" />
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="MaxHR" placeholder="MaxHR (between 60 and 202)" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type= "text" name="ExerciseAngina" placeholder="ExerciseAngina (1 for Yes, 0 for No)" required="required" />
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="Oldpeak" placeholder="Oldpeak" required="required" />
+        </div>
+      </div>
+
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="ST_Slope" placeholder="ST_Slope (0 for Down, 1 for Flat, 2 for Up)" required="required" />
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+         <center><button type="submit" class="button btn btn-default">PREDICT</button><center/>
+        </div>
+      </div>
+    </form>
+
+    
+
+    <h2 class="result"></h2>
+  </div>
+  </div>
+
+  </body>
+
+  
+    <footer>
+        <div class="card-header footer fixed-bottom text-center">
+            <p>B1571798 MSc Research Project Model Deployment using Flask</p>
+            
+        </div>
+    </footer>
+</body>
+</html>
