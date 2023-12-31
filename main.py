@@ -40,34 +40,5 @@ def results():
     return jsonify(output)
 
 
-
-
-
-
-
-
-    #try:
-           #reading the inputs given by the user
-           #Age = float(request.form["Age"])
-           #Sex = float(request.form["Sex"])
-           #ChestPainType = float(request.form["ChestPainType"])
-           #RestingBP = float(request.form["RestingBP"])
-           #Cholesterol = float(request.form["Cholesterol"])
-           #FastingBS = float(request.form["FastingBS"])
-           #RestingECG = float(request.form["RestingECG"])
-           #MaxHR = float(request.form["MaxHR"])
-           #ExerciseAngina = float(request.form["ExerciseAngina"])
-           #Oldpeak = float(request.form["Oldpeak"])
-           #ST_Slope = float(request.form["ST_Slope"])
-    
-    #inputList = [Age,Sex,ChestPainType,RestingBP,Cholesterol,FastingBS,RestingECG,MaxHR,ExerciseAngina,Oldpeak,ST_Slope]
-    
-    # load df_cols list
-    #with open("df_cols.pkl", 'rb') as file:
-            #pickle_df_cols = pickle.load(file)
-            #file.close()
-
-    # load model
-	#with open("desired-model-file-name.pkl", 'rb') as file:
-				#loaded_model = pickle.load(file)
-				#file.close()
+if __name__ == "__main__":
+    app.run(debug=False)
